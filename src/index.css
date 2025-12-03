@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RAKS Car Wash Design System - Premium Automotive Theme */
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 232 52% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 232 52% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 52% 15%;
+
+    --primary: 232 52% 31%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 232 52% 15%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 232 52% 31%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 232 52% 31%;
+
+    --radius: 0.75rem;
+
+    /* Custom RAKS tokens */
+    --raks-navy: 232 52% 31%;
+    --raks-navy-light: 232 52% 40%;
+    --raks-navy-dark: 232 52% 20%;
+    --raks-silver: 0 0% 75%;
+    --raks-silver-light: 0 0% 85%;
+    --raks-metallic: 0 0% 65%;
+    --raks-dark: 220 20% 10%;
+    --raks-light: 220 20% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(232 52% 31%) 0%, hsl(232 52% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(232 52% 15% / 0.9) 0%, hsl(232 52% 25% / 0.7) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9) 0%, hsl(0 0% 100% / 0.7) 100%);
+    --gradient-silver: linear-gradient(135deg, hsl(0 0% 85%) 0%, hsl(0 0% 70%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(232 52% 20%) 0%, hsl(232 52% 10%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 10px 40px -10px hsl(232 52% 31% / 0.15);
+    --shadow-elevated: 0 20px 60px -15px hsl(232 52% 31% / 0.25);
+    --shadow-glow: 0 0 30px hsl(232 52% 31% / 0.3);
+    --shadow-soft: 0 4px 20px hsl(220 20% 10% / 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 232 52% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 232 52% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 232 52% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 232 52% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 30%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 232 30% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 232 52% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 232 30% 20%;
+    --input: 232 30% 20%;
+    --ring: 232 52% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-card;
+  }
+
+  .glass-dark {
+    @apply bg-raks-navy/80 backdrop-blur-xl border border-primary/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  /* Premium Effects */
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .shine-effect:hover::after {
+    transform: translateX(100%);
+  }
+
+  /* Section Dividers */
+  .section-divider {
+    @apply relative;
+  }
+
+  .section-divider::before {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full;
+  }
+
+  /* Premium Button Glow */
+  .btn-glow {
+    @apply relative;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+
+  /* Line Clamp Utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
