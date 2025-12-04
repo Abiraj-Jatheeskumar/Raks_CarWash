@@ -148,7 +148,7 @@ const Hero = () => {
       </motion.button>
 
       {/* Slider Indicators */}
-      <div className="absolute bottom-32 md:bottom-40 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-[420px] sm:bottom-[460px] md:bottom-40 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {heroImages.map((_, index) => (
           <motion.button
             key={index}
