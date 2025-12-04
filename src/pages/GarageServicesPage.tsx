@@ -327,8 +327,7 @@ const GarageServicesPage = () => {
               <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20garage%20service" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg"
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10"
+                  className="bg-white/95 text-primary font-semibold hover:bg-white border-2 border-white shadow-lg"
                 >
                   WhatsApp Us
                   <Phone className="w-5 h-5 ml-2" />
