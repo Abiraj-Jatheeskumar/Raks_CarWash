@@ -392,17 +392,17 @@ const GarageServicesPage = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {garageServices.map((service) => (
               <motion.div
                 key={service.id}
                 variants={itemVariants}
                 whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.3 } }}
-                className="group relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                className="group relative bg-gradient-to-br from-card via-card to-primary/5 border-2 border-primary/30 hover:border-primary/50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Decorative gradient orb */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-3xl -z-0" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-3xl -z-0" />
                 
                 {/* Icon */}
                 <div className="flex items-start justify-between mb-4 relative z-10">
@@ -419,7 +419,7 @@ const GarageServicesPage = () => {
                 <h3 className="text-xl font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors relative z-10">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4 relative z-10">
+                <p className="text-sm text-muted-foreground mb-4 relative z-10">
                   {service.description}
                 </p>
 
@@ -428,7 +428,7 @@ const GarageServicesPage = () => {
                   {service.features.slice(0, 4).map((feature, index) => (
                     <div key={index} className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-xs text-gray-600">{feature}</span>
+                      <span className="text-xs text-muted-foreground">{feature}</span>
                     </div>
                   ))}
                   {service.features.length > 4 && (
@@ -459,15 +459,15 @@ const GarageServicesPage = () => {
                 )}
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-border">
+                <div className="flex items-center justify-between pt-4 border-t border-border relative z-10">
                   <div>
                     <div className="text-sm text-muted-foreground">Starting at</div>
-                    <div className="text-lg font-bold text-raks-silver">{service.price}</div>
+                    <div className="text-lg font-bold text-primary">{service.price}</div>
                   </div>
                   <a href={`https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20${encodeURIComponent(service.title)}`} target="_blank" rel="noopener noreferrer">
                     <Button 
                       size="sm"
-                      className="bg-raks-silver text-primary hover:bg-raks-silver-light"
+                      className="bg-primary text-white hover:bg-primary/90 shadow-lg"
                     >
                       WhatsApp
                     </Button>
@@ -475,7 +475,7 @@ const GarageServicesPage = () => {
                 </div>
 
                 {/* Hover Effect Border */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-raks-silver/0 via-raks-silver/10 to-raks-silver/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </motion.div>
             ))}
           </motion.div>
