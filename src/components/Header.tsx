@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Reviews", href: "#reviews" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Car Wash & Detailing", href: "/services" },
+  { name: "Auto Repair & Garage", href: "/garage-services" },
+  { name: "Gallery", href: "/gallery" },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +24,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-  };
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <header
@@ -43,46 +39,50 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3"
-          >
-            <div className="flex items-center gap-2">
-              <span className="text-2xl md:text-3xl font-display font-black text-white tracking-wider">
-                RAKS
-              </span>
-            </div>
-            <div className="hidden sm:flex flex-col">
-              <span className="text-xs text-raks-silver uppercase tracking-widest font-semibold">
-                Premium
-              </span>
-              <span className="text-[10px] text-white/70 uppercase tracking-wider -mt-0.5">
-                Car Detailing
-              </span>
-            </div>
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-3 cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-2xl md:text-3xl font-display font-black text-white tracking-wider">
+                  RAKS
+                </span>
+              </div>
+              <div className="hidden sm:flex flex-col">
+                <span className="text-xs text-raks-silver uppercase tracking-widest font-semibold">
+                  Premium
+                </span>
+                <span className="text-[10px] text-white/70 uppercase tracking-wider -mt-0.5">
+                  Car Detailing
+                </span>
+              </div>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link, index) => (
-              <motion.button
-                key={link.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -2 }}
-                onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-semibold text-white/90 hover:text-white transition-all relative group"
-              >
-                {link.name}
-                <motion.span
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-raks-silver to-transparent"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
+              <Link key={link.name} to={link.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ y: -2 }}
+                  className={`px-4 py-2 text-sm font-semibold transition-all relative group ${
+                    location.pathname === link.href ? "text-white" : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                  <motion.span
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-raks-silver to-transparent"
+                    initial={{ width: location.pathname === link.href ? "100%" : 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              </Link>
             ))}
           </nav>
 
@@ -92,12 +92,13 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">Call Now</span>
             </a>
-            <Button
-              onClick={() => scrollToSection("#contact")}
-              className="bg-raks-silver text-primary font-semibold hover:bg-raks-silver-light transition-all hover:shadow-glow"
-            >
-              Book Now
-            </Button>
+            <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20a%20service" target="_blank" rel="noopener noreferrer">
+              <Button
+                className="bg-raks-silver text-primary font-semibold hover:bg-raks-silver-light transition-all hover:shadow-glow"
+              >
+                WhatsApp Us
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,21 +122,24 @@ const Header = () => {
           >
             <nav className="container mx-auto px-4 py-4">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left px-4 py-3 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-lg transition-colors"
+                  to={link.href}
+                  className={`block w-full text-left px-4 py-3 hover:text-primary-foreground hover:bg-primary-foreground/5 rounded-lg transition-colors ${
+                    location.pathname === link.href ? "text-primary-foreground bg-primary-foreground/5" : "text-primary-foreground/80"
+                  }`}
                 >
                   {link.name}
-                </button>
+                </Link>
               ))}
               <div className="mt-4 px-4">
-                <Button
-                  onClick={() => scrollToSection("#contact")}
-                  className="w-full bg-raks-silver text-primary font-semibold"
-                >
-                  Book Now
-                </Button>
+                <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20a%20service" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    className="w-full bg-raks-silver text-primary font-semibold"
+                  >
+                    WhatsApp Us
+                  </Button>
+                </a>
               </div>
             </nav>
           </motion.div>

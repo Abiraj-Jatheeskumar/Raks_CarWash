@@ -129,11 +129,12 @@ const ServiceDetail = () => {
                 transition={{ delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="text-center p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center mx-auto mb-4">
+                <div className="relative text-center p-6 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                     {index + 1}
                   </div>
-                  <p className="text-sm font-medium text-foreground">{step}</p>
+                  <p className="text-sm font-medium text-foreground relative z-10">{step}</p>
                 </div>
                 {index < service.includes.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30" />
@@ -157,12 +158,17 @@ const ServiceDetail = () => {
               <h2 className="text-3xl font-display font-bold text-foreground mb-6">What You Get</h2>
               <div className="space-y-4">
                 {service.benefits.map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    key={benefit} 
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    className="relative flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center flex-shrink-0 relative z-10">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="font-medium text-foreground">{benefit}</span>
-                  </div>
+                    <span className="font-medium text-foreground relative z-10">{benefit}</span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -277,15 +283,20 @@ const ServiceDetail = () => {
               <h2 className="text-3xl font-display font-bold text-foreground mb-6">Recommended Add-ons</h2>
               <div className="space-y-4">
                 {recommendedAddons.map((addon) => (
-                  <div key={addon.name} className="flex items-center justify-between p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <motion.div 
+                    key={addon.name} 
+                    whileHover={{ scale: 1.02 }}
+                    className="relative flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                    <div className="flex items-center gap-4 relative z-10">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center shadow-md">
                         <addon.icon className="w-5 h-5 text-primary" />
                       </div>
                       <span className="font-medium text-foreground">{addon.name}</span>
                     </div>
-                    <span className="font-bold text-primary">{addon.price}</span>
-                  </div>
+                    <span className="font-bold text-primary relative z-10">{addon.price}</span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

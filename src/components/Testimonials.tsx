@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
@@ -254,6 +254,30 @@ const Testimonials = () => {
               <div className="text-sm text-primary-foreground/60">{stat.label}</div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Google Reviews CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <div className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10">
+            <p className="text-primary-foreground/80 text-lg">
+              Had a great experience? Share it with others!
+            </p>
+            <a
+              href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="bg-raks-silver text-primary hover:bg-raks-silver-light">
+                Leave a Review on Google
+                <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

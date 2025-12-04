@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
 
 const socialLinks = [
@@ -9,12 +10,10 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Car Wash & Detailing", href: "/services" },
+  { name: "Auto Repair & Garage", href: "/garage-services" },
+  { name: "Gallery", href: "/gallery" },
 ];
 
 const services = [
@@ -27,13 +26,6 @@ const services = [
 ];
 
 const Footer = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background Pattern */}
@@ -75,12 +67,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <Link
+                    to={link.href}
                     className="text-primary-foreground/70 hover:text-raks-silver transition-colors"
                   >
                     {link.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -83,13 +83,17 @@ const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  className="group p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                    <item.icon className="w-5 h-5 text-primary" />
+                  {/* Decorative gradient orb */}
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                  
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all relative z-10">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h4 className="font-display font-bold text-foreground text-sm">{item.title}</h4>
-                  <p className="text-xs text-muted-foreground">{item.description}</p>
+                  <h4 className="font-display font-bold text-foreground text-sm relative z-10">{item.title}</h4>
+                  <p className="text-xs text-gray-600 relative z-10">{item.description}</p>
                 </motion.div>
               ))}
             </div>
