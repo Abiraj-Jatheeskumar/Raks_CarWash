@@ -120,8 +120,8 @@ const Hero = () => {
         </AnimatePresence>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-primary/90 to-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-primary/70" />
       </div>
 
       {/* Slider Navigation Arrows */}

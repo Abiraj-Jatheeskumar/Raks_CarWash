@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import Logo from "@/assets/Logo.png";
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
@@ -42,7 +43,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center mb-6">
-              <span className="text-3xl font-display font-black tracking-wider">RAKS</span>
+              <img 
+                src={Logo} 
+                alt="RAKS Premium Car Detailing" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">
               Premium car wash & detailing center dedicated to making your vehicle shine like new. Quality service, every time.

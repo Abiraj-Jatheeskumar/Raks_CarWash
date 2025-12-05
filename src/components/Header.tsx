@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/assets/Logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -32,8 +33,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-        ? "bg-[#1a2744] backdrop-blur-lg shadow-2xl border-white/10"
-        : "bg-[#1a2744]/95 backdrop-blur-md border-white/5"
+        ? "bg-primary backdrop-blur-lg shadow-2xl border-white/10"
+        : "bg-primary/95 backdrop-blur-md border-white/5"
         }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,21 +44,13 @@ const Header = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-3 cursor-pointer"
+              className="flex items-center cursor-pointer"
             >
-              <div className="flex items-center gap-2">
-                <span className="text-2xl md:text-3xl font-display font-black text-white tracking-wider">
-                  RAKS
-                </span>
-              </div>
-              <div className="hidden sm:flex flex-col">
-                <span className="text-xs text-raks-silver uppercase tracking-widest font-semibold">
-                  Premium
-                </span>
-                <span className="text-[10px] text-white/70 uppercase tracking-wider -mt-0.5">
-                  Car Detailing
-                </span>
-              </div>
+              <img 
+                src={Logo} 
+                alt="RAKS Premium Car Detailing" 
+                className="h-12 md:h-14 w-auto object-contain"
+              />
             </motion.div>
           </Link>
 
