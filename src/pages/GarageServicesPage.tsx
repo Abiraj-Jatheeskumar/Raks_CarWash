@@ -25,6 +25,8 @@ import {
   Fuel,
   Droplets,
 } from "lucide-react";
+import galleryEngine from "@/assets/gallery-4-engine.jpg";
+import aboutWorkshop from "@/assets/about-workshop.jpg";
 
 const garageServices = [
   {
@@ -283,8 +285,9 @@ const GarageServicesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-[#0f1729]">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-[#0f1729]">
+        {/* Simple Pattern Background */}
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
             backgroundSize: '40px 40px'
@@ -296,72 +299,155 @@ const GarageServicesPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-7xl mx-auto"
           >
+            {/* Badge */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="inline-flex items-center gap-2 bg-raks-silver/20 text-raks-silver px-6 py-2 rounded-full mb-6"
+              transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
+              className="text-center mb-8"
             >
-              <Wrench className="w-5 h-5" />
-              <span className="font-semibold">Professional Garage Services</span>
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-raks-silver to-white px-8 py-3 rounded-full shadow-2xl">
+                <Wrench className="w-6 h-6 text-primary" />
+                <span className="font-bold text-primary tracking-wider">AUTOMOTIVE REPAIR SPECIALISTS</span>
+              </div>
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
-              Complete Auto Repair & Maintenance
-            </h1>
-            <p className="text-base text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto">
-              Our auto repair division offers reliable, transparent, and expert mechanical services for all types of vehicles. With modern diagnostic systems, skilled technicians, and a commitment to quality, we ensure your car runs smoothly and safely. From routine maintenance to engine repairs, brake service, suspension work, and electrical troubleshooting, every job is handled with precision and care. We focus on identifying the real issue, explaining it clearly to the customer, and providing long-lasting solutions — not quick fixes. At Raks, your vehicle's performance, reliability, and safety always come first.
-            </p>
+            {/* Main Heading */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-4xl md:text-5xl lg:text-7xl font-display font-black mb-8 leading-tight text-center"
+            >
+              <span className="text-white">Complete Auto Repair & Maintenance</span>
+            </motion.h1>
             
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-raks-silver text-primary font-semibold hover:bg-raks-silver-light"
-                onClick={() => document.querySelector('#services-grid')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20garage%20service" target="_blank" rel="noopener noreferrer">
+            {/* Decorative Line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="h-1 w-32 bg-gradient-to-r from-transparent via-raks-silver to-transparent rounded-full mx-auto mb-10"
+            />
+            
+            {/* Description - Full Width */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="mb-12"
+            >
+              <p className="text-base md:text-lg text-white/90 leading-relaxed text-center max-w-6xl mx-auto">
+                Our auto repair division offers reliable, transparent, and expert mechanical services for all types of vehicles. With modern diagnostic systems, skilled technicians, and a commitment to quality, we ensure your car runs smoothly and safely. From routine maintenance to engine repairs, brake service, suspension work, and electrical troubleshooting, every job is handled with precision and care. We focus on identifying the real issue, explaining it clearly to the customer, and providing long-lasting solutions — not quick fixes. At Raks, your vehicle's performance, reliability, and safety always come first.
+              </p>
+            </motion.div>
+            
+            {/* CTA Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-wrap gap-4 justify-center"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   size="lg"
-                  className="bg-white/95 text-primary font-semibold hover:bg-white border-2 border-white shadow-lg"
+                  className="bg-gradient-to-r from-raks-silver to-white text-primary font-bold hover:shadow-2xl hover:shadow-raks-silver/50 transition-all"
+                  onClick={() => document.querySelector('#services-grid')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  WhatsApp Us
-                  <Phone className="w-5 h-5 ml-2" />
+                  View Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
+              </motion.div>
+              
+              <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20garage%20service" target="_blank" rel="noopener noreferrer">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    size="lg"
+                    className="bg-white/10 backdrop-blur-md text-white font-bold hover:bg-white/20 border-2 border-white/30 hover:border-white shadow-lg"
+                  >
+                    WhatsApp Us
+                    <Phone className="w-5 h-5 ml-2" />
+                  </Button>
+                </motion.div>
               </a>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-raks-silver/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
       </section>
 
-      {/* Emergency Services Banner */}
-      <section className="py-12 bg-gradient-to-r from-raks-silver/10 via-transparent to-raks-silver/10">
+      {/* Image Showcase Section */}
+      <section className="py-16 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {emergencyServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-raks-silver/20 to-raks-silver/5 mb-4">
-                  <service.icon className="w-8 h-8 text-raks-silver" />
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Image Side */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-primary/20">
+                <img 
+                  src={galleryEngine} 
+                  alt="Professional Engine Service"
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
+                
+                {/* Overlay Badge */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="backdrop-blur-md bg-white/10 rounded-2xl p-5 border border-white/20">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-12 h-12 rounded-xl bg-raks-silver flex items-center justify-center">
+                        <Cog className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-white font-bold text-lg">Expert Diagnostics</p>
+                        <p className="text-white/80 text-sm">State-of-the-art Equipment</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* Emergency Services */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Fast & Reliable Service
+              </h3>
+              
+              <div className="grid grid-cols-1 gap-5">
+                {emergencyServices.map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                    className="flex items-start gap-4 p-5 bg-white rounded-2xl border-2 border-primary/20 hover:border-primary/40 shadow-md hover:shadow-lg transition-all group"
+                  >
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-raks-silver/20 to-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <service.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{service.title}</h4>
+                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -454,16 +540,22 @@ const GarageServicesPage = () => {
                   </motion.div>
                 )}
 
-                {/* Price & CTA */}
+                {/* CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-border relative z-10">
-                  <div>
-                    <div className="text-sm text-muted-foreground">Starting at</div>
-                    <div className="text-lg font-bold text-primary">{service.price}</div>
-                  </div>
-                  <a href={`https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20${encodeURIComponent(service.title)}`} target="_blank" rel="noopener noreferrer">
+                  <a href="tel:+94770710000" className="flex-1">
                     <Button 
                       size="sm"
-                      className="bg-primary text-white hover:bg-primary/90 shadow-lg"
+                      variant="outline"
+                      className="w-full border-primary/30 hover:bg-primary/10 hover:border-primary/50"
+                    >
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call
+                    </Button>
+                  </a>
+                  <a href={`https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20${encodeURIComponent(service.title)}`} target="_blank" rel="noopener noreferrer" className="flex-1 ml-3">
+                    <Button 
+                      size="sm"
+                      className="w-full bg-primary text-white hover:bg-primary/90 shadow-lg"
                     >
                       WhatsApp
                     </Button>
@@ -478,20 +570,26 @@ const GarageServicesPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us Section with Image */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-black text-center text-foreground mb-12">
-              Why Choose RAKS Garage Services?
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-4">
+              Why Choose RAKS Auto Repair?
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Experience the difference of professional automotive care with certified technicians and advanced technology
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
                   title: "Certified Technicians",
@@ -516,23 +614,61 @@ const GarageServicesPage = () => {
               ].map((item, index) => (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex gap-4"
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-card/50 backdrop-blur-sm p-6 rounded-xl border border-border hover:border-raks-silver/50 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-raks-silver/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-raks-silver/20 to-raks-silver/10 flex items-center justify-center mb-4">
                     <item.icon className="w-6 h-6 text-raks-silver" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+
+            {/* Workshop Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl">
+                <img
+                  src={aboutWorkshop}
+                  alt="Professional workshop"
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+                
+                {/* Overlay Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-full bg-raks-silver flex items-center justify-center">
+                        <Wrench className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-white font-bold text-lg">State-of-the-Art Facility</div>
+                        <div className="text-white/70 text-sm">Equipped with the latest technology</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -287,18 +287,84 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-center max-w-4xl mx-auto mb-16"
         >
-          <span className="inline-block px-4 py-2 mb-4 text-sm font-medium text-primary bg-primary/10 rounded-full border border-primary/20">
-            Our Services
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-black text-foreground mb-6">
-            Complete Car Care
-            <span className="text-primary block">Solutions</span>
-          </h2>
-          <p className="text-muted-foreground text-base leading-relaxed max-w-4xl mx-auto mb-12">
-            At Raks Car Wash, we deliver a complete, professional cleaning experience that protects your vehicle inside and out. Using premium products, advanced equipment, and careful techniques, our team ensures every wash is safe, detailed, and truly high-quality. From exterior cleaning and underbody washing to interior vacuuming and polishing, we remove dirt and stains without harming your car. Whether it's a quick wash or full detailing, your vehicle leaves Raks looking cleaner, brighter, and showroom-ready.
-          </p>
+          {/* Badge */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : {}}
+            transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
+            className="inline-block mb-6"
+          >
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-raks-silver px-6 py-3 rounded-full shadow-xl">
+              <Sparkles className="w-5 h-5 text-white animate-pulse" />
+              <span className="text-sm font-bold text-white tracking-wider">OUR SERVICES</span>
+            </div>
+          </motion.div>
+          
+          {/* Main Heading */}
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 leading-tight"
+          >
+            <span className="text-foreground">Complete Car Care</span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-raks-silver to-primary bg-clip-text text-transparent">
+              Solutions
+            </span>
+          </motion.h2>
+          
+          {/* Decorative Line */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="h-1.5 w-32 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full mx-auto mb-8"
+          />
+          
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="relative"
+          >
+            {/* Quote marks decoration */}
+            <div className="absolute -top-4 -left-4 text-6xl text-primary/10 font-serif">"</div>
+            <div className="absolute -bottom-8 -right-4 text-6xl text-primary/10 font-serif">"</div>
+            
+            <p className="text-muted-foreground text-base leading-relaxed max-w-6xl mx-auto relative z-10 px-4">
+              At Raks Car Wash, we deliver a complete, professional cleaning experience that protects your vehicle inside and out. Using premium products, advanced equipment, and careful techniques, our team ensures every wash is safe, detailed, and truly high-quality. From exterior cleaning and underbody washing to interior vacuuming and polishing, we remove dirt and stains without harming your car. Whether it's a quick wash or full detailing, your vehicle leaves Raks looking cleaner, brighter, and showroom-ready.
+            </p>
+          </motion.div>
+          
+          {/* Feature Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex flex-wrap justify-center gap-3 mt-8"
+          >
+            {[
+              { icon: Shield, text: "Premium Products" },
+              { icon: Sparkles, text: "Expert Care" },
+              { icon: CheckCircle2, text: "Quality Assured" }
+            ].map((item, index) => (
+              <motion.div
+                key={item.text}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -3 }}
+                className="flex items-center gap-2 bg-white border-2 border-primary/20 px-5 py-2.5 rounded-full shadow-md hover:shadow-lg hover:border-primary/40 transition-all"
+              >
+                <item.icon className="w-4 h-4 text-primary" />
+                <span className="text-sm font-semibold text-foreground">{item.text}</span>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* Vehicle Type Selection Section */}
@@ -306,49 +372,119 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12 bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 rounded-3xl p-8 shadow-xl"
+          className="mb-12 relative overflow-hidden"
         >
-          <div className="text-center mb-6">
-            <p className="text-primary font-semibold text-lg leading-relaxed">
-              Select your vehicle type to see pricing and services tailored for your car.
-            </p>
-          </div>
+          {/* Background with gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-raks-silver/5 to-primary/5 rounded-3xl" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-raks-silver/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
           
-          <div className="space-y-3">
-            {/* First Row - 6 types */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {carTypes.slice(0, 6).map((carType) => (
-                <button
-                  key={carType.id}
-                  onClick={() => setSelectedCarType(carType.id)}
-                  className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-xl transition-all ${
-                    selectedCarType === carType.id
-                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                      : 'bg-white hover:bg-primary/10 hover:scale-105'
-                  }`}
-                >
-                  <carType.icon className="w-4 h-4" />
-                  {carType.name}
-                </button>
-              ))}
-            </div>
+          <div className="relative bg-white/80 backdrop-blur-sm border-2 border-primary/30 rounded-3xl p-8 md:p-10 shadow-2xl">
+            {/* Header Section */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mb-8"
+            >
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-raks-silver px-6 py-2.5 rounded-full mb-4 shadow-lg">
+                <Car className="w-5 h-5 text-white" />
+                <span className="text-sm font-bold text-white tracking-wide">CHOOSE YOUR VEHICLE</span>
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                Select Your Vehicle Type
+              </h3>
+              
+              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+                Choose your vehicle to view customized pricing and services designed specifically for your car
+              </p>
+              
+              {/* Decorative line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={isInView ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="h-1 w-24 bg-gradient-to-r from-primary via-raks-silver to-primary rounded-full mx-auto mt-4"
+              />
+            </motion.div>
             
-            {/* Second Row - 5 types */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {carTypes.slice(6).map((carType) => (
-                <button
-                  key={carType.id}
-                  onClick={() => setSelectedCarType(carType.id)}
-                  className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-xl transition-all ${
-                    selectedCarType === carType.id
-                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                      : 'bg-white hover:bg-primary/10 hover:scale-105'
-                  }`}
-                >
-                  <carType.icon className="w-4 h-4" />
-                  {carType.name}
-                </button>
-              ))}
+            <div className="space-y-5">
+              {/* First Row - 6 types */}
+              <div className="flex flex-wrap justify-center gap-4">
+                {carTypes.slice(0, 6).map((carType, index) => (
+                  <motion.button
+                    key={carType.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
+                    onClick={() => setSelectedCarType(carType.id)}
+                    whileHover={{ scale: 1.08, y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative group flex items-center gap-3 px-7 py-4 text-base font-bold rounded-xl transition-all duration-300 ${
+                      selectedCarType === carType.id
+                        ? 'bg-gradient-to-r from-primary to-primary/90 text-white shadow-xl shadow-primary/30'
+                        : 'bg-white hover:bg-gradient-to-r hover:from-raks-silver/10 hover:to-primary/10 text-foreground shadow-md hover:shadow-lg border-2 border-primary/20 hover:border-primary/40'
+                    }`}
+                  >
+                    {selectedCarType === carType.id && (
+                      <motion.div
+                        layoutId="activeVehicle"
+                        className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-xl"
+                        transition={{ type: "spring", duration: 0.6 }}
+                      />
+                    )}
+                    <carType.icon className={`w-5 h-5 relative z-10 ${selectedCarType === carType.id ? 'text-white' : 'text-primary'}`} />
+                    <span className="relative z-10">{carType.name}</span>
+                    
+                    {selectedCarType === carType.id && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute -top-1 -right-1 w-3 h-3 bg-raks-silver rounded-full shadow-lg"
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+              
+              {/* Second Row - 5 types */}
+              <div className="flex flex-wrap justify-center gap-4">
+                {carTypes.slice(6).map((carType, index) => (
+                  <motion.button
+                    key={carType.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.9 + index * 0.05 }}
+                    onClick={() => setSelectedCarType(carType.id)}
+                    whileHover={{ scale: 1.08, y: -4 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative group flex items-center gap-3 px-7 py-4 text-base font-bold rounded-xl transition-all duration-300 ${
+                      selectedCarType === carType.id
+                        ? 'bg-gradient-to-r from-primary to-primary/90 text-white shadow-xl shadow-primary/30'
+                        : 'bg-white hover:bg-gradient-to-r hover:from-raks-silver/10 hover:to-primary/10 text-foreground shadow-md hover:shadow-lg border-2 border-primary/20 hover:border-primary/40'
+                    }`}
+                  >
+                    {selectedCarType === carType.id && (
+                      <motion.div
+                        layoutId="activeVehicle"
+                        className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-xl"
+                        transition={{ type: "spring", duration: 0.6 }}
+                      />
+                    )}
+                    <carType.icon className={`w-5 h-5 relative z-10 ${selectedCarType === carType.id ? 'text-white' : 'text-primary'}`} />
+                    <span className="relative z-10">{carType.name}</span>
+                    
+                    {selectedCarType === carType.id && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute -top-1 -right-1 w-3 h-3 bg-raks-silver rounded-full shadow-lg"
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

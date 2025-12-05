@@ -32,6 +32,18 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [sloganText, setSloganText] = useState("");
+  const fullSlogan = "We love your car the same as you do";
+
+  // Typewriter animation for slogan
+  useEffect(() => {
+    if (sloganText.length < fullSlogan.length) {
+      const timeout = setTimeout(() => {
+        setSloganText(fullSlogan.slice(0, sloganText.length + 1));
+      }, 80);
+      return () => clearTimeout(timeout);
+    }
+  }, [sloganText]);
 
   // Typing animation
   useEffect(() => {
@@ -173,196 +185,33 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            {/* Animated Slogan with Word-by-Word Reveal */}
+            {/* Animated Slogan */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="relative mb-10 py-8"
+              className="relative mb-16 py-10"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight tracking-wide">
-                {/* Animated words */}
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-white via-raks-silver to-gray-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 400,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  We
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-pink-200 via-rose-300 to-pink-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 600,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  <motion.span
-                    animate={{ 
-                      textShadow: [
-                        "0 0 20px rgba(255, 182, 193, 0.5)",
-                        "0 0 40px rgba(255, 182, 193, 0.8)",
-                        "0 0 20px rgba(255, 182, 193, 0.5)",
-                      ]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    love
-                  </motion.span>
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 300,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  your
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.0, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 700,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  <motion.span
-                    animate={{ 
-                      textShadow: [
-                        "0 0 30px rgba(103, 232, 249, 0.6)",
-                        "0 0 50px rgba(103, 232, 249, 0.9)",
-                        "0 0 30px rgba(103, 232, 249, 0.6)",
-                      ]
-                    }}
-                    transition={{ duration: 2.5, repeat: Infinity }}
-                  >
-                    car
-                  </motion.span>
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.2, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 300,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  the
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.4, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-amber-200 via-yellow-300 to-amber-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 600,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  <motion.span
-                    animate={{ 
-                      textShadow: [
-                        "0 0 25px rgba(251, 191, 36, 0.5)",
-                        "0 0 45px rgba(251, 191, 36, 0.8)",
-                        "0 0 25px rgba(251, 191, 36, 0.5)",
-                      ]
-                    }}
-                    transition={{ duration: 2.2, repeat: Infinity }}
-                  >
-                    same
-                  </motion.span>
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.6, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 300,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  as
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.8, type: "spring", bounce: 0.4 }}
-                  className="inline-block mr-4 bg-gradient-to-br from-emerald-300 via-green-300 to-emerald-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 600,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  <motion.span
-                    animate={{ 
-                      textShadow: [
-                        "0 0 25px rgba(52, 211, 153, 0.5)",
-                        "0 0 45px rgba(52, 211, 153, 0.8)",
-                        "0 0 25px rgba(52, 211, 153, 0.5)",
-                      ]
-                    }}
-                    transition={{ duration: 2.3, repeat: Infinity }}
-                  >
-                    you
-                  </motion.span>
-                </motion.span>
-                
-                <motion.span
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 2.0, type: "spring", bounce: 0.4 }}
-                  className="inline-block bg-gradient-to-br from-white via-raks-silver to-gray-200 bg-clip-text text-transparent drop-shadow-2xl"
-                  style={{ 
-                    fontFamily: "'Playfair Display', 'Georgia', serif", 
-                    fontWeight: 400,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  do
-                </motion.span>
-              </h1>
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-light leading-relaxed tracking-wider text-white drop-shadow-2xl"
+                style={{ letterSpacing: '0.05em' }}
+              >
+                We love your car the same as you do
+              </motion.h1>
               
               {/* Animated decorative underline */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.2, delay: 2.2, ease: "easeInOut" }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-transparent via-raks-silver to-transparent origin-center"
+                className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-raks-silver to-transparent origin-left"
               >
                 <motion.div
                   animate={{
-                    x: ["-100%", "100%"],
+                    x: ["0%", "100%"],
                   }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   className="h-full w-1/3 bg-gradient-to-r from-transparent via-white to-transparent"
@@ -450,22 +299,6 @@ const Hero = () => {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll Indicator - Hidden on mobile */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2"
-        >
-          <div className="w-1 h-2 bg-raks-silver rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

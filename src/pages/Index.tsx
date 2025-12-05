@@ -21,6 +21,9 @@ import {
   Facebook,
   Instagram
 } from "lucide-react";
+import galleryPolish from "@/assets/gallery-1-polish.jpg";
+import galleryCeramic from "@/assets/gallery-3-ceramic.jpg";
+import galleryEngine from "@/assets/gallery-4-engine.jpg";
 
 // Custom TikTok Icon Component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -35,21 +38,24 @@ const quickLinks = [
     description: "Premium exterior & interior cleaning and detailing services",
     icon: Car,
     href: "/services",
-    color: "from-purple-500/20 to-purple-600/20"
+    color: "from-purple-500/20 to-purple-600/20",
+    image: galleryPolish
   },
   {
     title: "Bodywork & Paint",
     description: "Professional body repairs, dent removal & paint services",
     icon: Sparkles,
     href: "/bodywork-paint",
-    color: "from-blue-500/20 to-blue-600/20"
+    color: "from-blue-500/20 to-blue-600/20",
+    image: galleryCeramic
   },
   {
     title: "Auto Repair",
     description: "Complete mechanical repairs & maintenance solutions",
     icon: Wrench,
     href: "/garage-services",
-    color: "from-orange-500/20 to-orange-600/20"
+    color: "from-orange-500/20 to-orange-600/20",
+    image: galleryEngine
   }
 ];
 
@@ -145,16 +151,25 @@ const Index = () => {
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 >
                   <Link to={link.href}>
-                    <div className="group relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                      {/* Decorative gradient orb */}
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-3xl -z-0" />
-                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${link.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                      
-                      <div className="relative z-10">
-                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
-                          <link.icon className="w-7 h-7 text-primary" />
-                        </div>
+                    <div className="group relative bg-white border-2 border-primary/20 hover:border-primary/40 rounded-2xl h-full shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                      {/* Image Background */}
+                      <div className="relative h-56 overflow-hidden">
+                        <img 
+                          src={link.image} 
+                          alt={link.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
                         
+                        {/* Icon on Image */}
+                        <div className="absolute top-4 left-4 w-14 h-14 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
+                          <link.icon className="w-7 h-7 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-6">
                         <h3 className="text-xl font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                           {link.title}
                         </h3>
@@ -184,16 +199,36 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-flex items-center gap-2 bg-raks-silver/10 text-raks-silver px-4 py-2 rounded-full mb-6">
-                  <Sparkles className="w-4 h-4" />
-                  <span className="text-sm font-semibold">Premium Services</span>
-                </div>
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="inline-block mb-6"
+                >
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-raks-silver to-white px-5 py-2.5 rounded-full shadow-lg">
+                    <Sparkles className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-bold text-primary tracking-wide">PREMIUM SERVICES</span>
+                  </div>
+                </motion.div>
                 
-                <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-6">
-                  Why Choose RAKS Auto Shine?
+                <h2 className="text-3xl md:text-5xl font-display font-black mb-2 leading-tight">
+                  <span className="text-foreground">Why Choose</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-primary via-raks-silver to-primary bg-clip-text text-transparent">
+                    RAKS Auto Shine?
+                  </span>
                 </h2>
                 
-                <div className="space-y-4 mb-8">
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-1 w-24 bg-gradient-to-r from-primary to-raks-silver rounded-full mb-8 origin-left"
+                />
+                
+                <div className="space-y-3 mb-10">
                   {[
                     "Professional car wash & detailing services",
                     "Complete garage & repair solutions",
@@ -207,13 +242,14 @@ const Index = () => {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-3"
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                      className="flex items-center gap-3 group"
                     >
-                      <div className="w-6 h-6 rounded-full bg-raks-silver/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-raks-silver" />
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-raks-silver/20 to-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md">
+                        <CheckCircle2 className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-foreground">{item}</span>
+                      <span className="text-foreground font-medium group-hover:text-primary transition-colors">{item}</span>
                     </motion.div>
                   ))}
                 </div>

@@ -80,19 +80,42 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:+94770710000" className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Call Now</span>
-            </a>
-            <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20a%20service" target="_blank" rel="noopener noreferrer">
-              <Button
-                className="bg-raks-silver text-primary font-semibold hover:bg-raks-silver-light transition-all hover:shadow-glow"
-              >
-                Book Now
-              </Button>
-            </a>
+            <motion.a 
+              href="tel:+94770710000" 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative group"
+            >
+              <div className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300">
+                <Phone className="w-4 h-4 text-raks-silver" />
+                <span className="text-sm font-semibold text-white">Call Now</span>
+              </div>
+            </motion.a>
+            
+            <motion.a 
+              href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20a%20service" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="relative group overflow-hidden rounded-lg">
+                {/* Gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-raks-silver via-white to-raks-silver opacity-100 group-hover:opacity-100 transition-opacity" />
+                {/* Animated shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                />
+                {/* Button content */}
+                <div className="relative px-6 py-2.5 flex items-center gap-2">
+                  <span className="text-sm font-bold text-primary tracking-wide">Book Now</span>
+                </div>
+              </div>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
