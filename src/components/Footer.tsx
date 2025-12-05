@@ -4,10 +4,10 @@ import { Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from "luci
 import Logo from "@/assets/Logo.png";
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook", color: "hover:bg-[#1877F2]" },
-  { icon: Instagram, href: "#", label: "Instagram", color: "hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#515bd4]" },
-  { icon: Twitter, href: "#", label: "Twitter", color: "hover:bg-[#1DA1F2]" },
-  { icon: Youtube, href: "#", label: "YouTube", color: "hover:bg-[#FF0000]" },
+  { icon: Facebook, href: "#", label: "Facebook", bgColor: "bg-[#1877F2]", hoverBg: "hover:bg-[#1877F2]" },
+  { icon: Instagram, href: "#", label: "Instagram", bgColor: "bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#515bd4]", hoverBg: "hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#515bd4]" },
+  { icon: Twitter, href: "#", label: "Twitter", bgColor: "bg-[#1DA1F2]", hoverBg: "hover:bg-[#1DA1F2]" },
+  { icon: Youtube, href: "#", label: "YouTube", bgColor: "bg-[#FF0000]", hoverBg: "hover:bg-[#FF0000]" },
 ];
 
 const quickLinks = [
@@ -58,7 +58,7 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className={`w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center ${social.color} hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                  className={`w-10 h-10 rounded-lg ${social.bgColor} text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

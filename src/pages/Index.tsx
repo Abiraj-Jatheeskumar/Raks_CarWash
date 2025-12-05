@@ -80,25 +80,25 @@ const socialLinks = [
     name: "WhatsApp",
     icon: MessageSquare,
     href: "https://wa.me/94770710000",
-    color: "bg-green-500 hover:bg-green-600"
+    color: "bg-[#25D366] hover:bg-[#20BA5A]"
   },
   {
     name: "Facebook",
     icon: Facebook,
     href: "https://facebook.com/rakscarwash",
-    color: "bg-primary hover:bg-primary/90"
+    color: "bg-[#1877F2] hover:bg-[#0C63D4]"
   },
   {
     name: "Instagram",
     icon: Instagram,
     href: "https://instagram.com/rakscarwash",
-    color: "bg-pink-600 hover:bg-pink-700"
+    color: "bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#515bd4] hover:opacity-90"
   },
   {
     name: "TikTok",
     icon: Send,
     href: "https://tiktok.com/@rakscarwash",
-    color: "bg-gray-800 hover:bg-gray-900"
+    color: "bg-[#010101] hover:bg-[#000000]"
   }
 ];
 
