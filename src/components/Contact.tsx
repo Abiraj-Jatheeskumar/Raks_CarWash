@@ -128,7 +128,7 @@ const Contact = () => {
         >
           <Button
             onClick={() => handleWhatsApp("Hi! I'd like to book a car wash service.")}
-            className="h-auto py-4 bg-green-500 hover:bg-green-600 text-white flex flex-col items-center gap-2"
+            className="h-auto py-4 bg-[#25D366] hover:bg-[#20BA5A] text-white flex flex-col items-center gap-2"
           >
             <MessageCircle className="w-6 h-6" />
             <span className="text-sm font-medium">WhatsApp Booking</span>
