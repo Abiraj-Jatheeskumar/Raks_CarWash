@@ -127,13 +127,19 @@ const Gallery = () => {
               <h3 className="text-3xl font-display font-black text-foreground">Featured Work</h3>
               <p className="text-muted-foreground">Our most stunning transformations</p>
             </div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="hidden md:flex items-center gap-2 text-primary font-semibold cursor-pointer"
+            <a 
+              href="https://youtu.be/UdnHtkB0ySg?si=1du7Cak1IRd4uYtQ" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              <span>View Process</span>
-              <Play className="w-5 h-5" />
-            </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="hidden md:flex items-center gap-2 text-primary font-semibold cursor-pointer hover:text-primary/80 transition-colors"
+              >
+                <span>View Process</span>
+                <Play className="w-5 h-5" />
+              </motion.div>
+            </a>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

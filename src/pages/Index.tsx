@@ -19,9 +19,15 @@ import {
   MapPin,
   Clock,
   Facebook,
-  Instagram,
-  Send
+  Instagram
 } from "lucide-react";
+
+// Custom TikTok Icon Component
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
 
 const quickLinks = [
   {
@@ -85,19 +91,19 @@ const socialLinks = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://facebook.com/rakscarwash",
+    href: "https://www.facebook.com/share/17ZJZ65BuQ/?mibextid=wwXIfr",
     color: "bg-[#1877F2] hover:bg-[#0C63D4]"
   },
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com/rakscarwash",
+    href: "https://www.instagram.com/rakscarwash?igsh=MTg2YTVkOGFhaXlpZg==",
     color: "bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#515bd4] hover:opacity-90"
   },
   {
     name: "TikTok",
-    icon: Send,
-    href: "https://tiktok.com/@rakscarwash",
+    icon: TikTokIcon,
+    href: "https://www.tiktok.com/@rakscarwash?_r=1&_t=ZS-91yMHTonqSu",
     color: "bg-[#010101] hover:bg-[#000000]"
   }
 ];
