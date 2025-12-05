@@ -86,7 +86,7 @@ const socialLinks = [
     name: "Facebook",
     icon: Facebook,
     href: "https://facebook.com/rakscarwash",
-    color: "bg-blue-600 hover:bg-blue-700"
+    color: "bg-primary hover:bg-primary/90"
   },
   {
     name: "Instagram",
@@ -142,11 +142,11 @@ const Index = () => {
                   <Link to={link.href}>
                     <div className="group relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                       {/* Decorative gradient orb */}
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-3xl -z-0" />
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-3xl -z-0" />
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${link.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                       
                       <div className="relative z-10">
-                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
                           <link.icon className="w-7 h-7 text-primary" />
                         </div>
                         
@@ -241,7 +241,7 @@ const Index = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                     >
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-raks-silver bg-clip-text text-transparent mb-2 relative z-10">15+</div>
                       <div className="text-sm text-gray-600 relative z-10">Years Experience</div>
                     </motion.div>
@@ -249,7 +249,7 @@ const Index = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                     >
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-raks-silver bg-clip-text text-transparent mb-2 relative z-10">10K+</div>
                       <div className="text-sm text-gray-600 relative z-10">Happy Customers</div>
                     </motion.div>
@@ -259,7 +259,7 @@ const Index = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                     >
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-raks-silver bg-clip-text text-transparent mb-2 relative z-10">50+</div>
                       <div className="text-sm text-gray-600 relative z-10">Services Offered</div>
                     </motion.div>
@@ -267,7 +267,7 @@ const Index = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                     >
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-raks-silver bg-clip-text text-transparent mb-2 relative z-10">100%</div>
                       <div className="text-sm text-gray-600 relative z-10">Satisfaction</div>
                     </motion.div>
@@ -314,10 +314,10 @@ const Index = () => {
                   className="relative bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all group overflow-hidden"
                 >
                   {/* Decorative gradient orb */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-3xl -z-0" />
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-3xl -z-0" />
                   
                   <div className="flex flex-col items-center text-center space-y-4 relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
                       <info.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>

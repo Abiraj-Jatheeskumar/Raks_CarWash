@@ -130,8 +130,8 @@ const ServiceDetail = () => {
                 className="relative"
               >
                 <div className="relative text-center p-6 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden">
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/90 text-white font-bold flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                     {index + 1}
                   </div>
                   <p className="text-sm font-medium text-foreground relative z-10">{step}</p>
@@ -163,8 +163,8 @@ const ServiceDetail = () => {
                     whileHover={{ scale: 1.02, x: 5 }}
                     className="relative flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center flex-shrink-0 relative z-10">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center flex-shrink-0 relative z-10">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
                     </div>
                     <span className="font-medium text-foreground relative z-10">{benefit}</span>
@@ -288,9 +288,9 @@ const ServiceDetail = () => {
                     whileHover={{ scale: 1.02 }}
                     className="relative flex items-center justify-between p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                     <div className="flex items-center gap-4 relative z-10">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center shadow-md">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center shadow-md">
                         <addon.icon className="w-5 h-5 text-primary" />
                       </div>
                       <span className="font-medium text-foreground">{addon.name}</span>

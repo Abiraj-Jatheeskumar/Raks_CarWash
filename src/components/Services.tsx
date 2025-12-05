@@ -340,9 +340,9 @@ const Services = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="group relative"
                   >
-                    <div className={`h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white via-gray-50 to-blue-50/30 border-2 border-transparent hover:border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:scale-105 ${expandedService === service.id ? 'ring-2 ring-primary/50 shadow-2xl' : ''}`}>
+                    <div className={`h-full p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-transparent hover:border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:scale-105 ${expandedService === service.id ? 'ring-2 ring-primary/50 shadow-2xl' : ''}`}>
                       {/* Animated Background Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/8 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       {/* Shine Effect */}
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -351,7 +351,7 @@ const Services = () => {
 
                       <div className="relative z-10">
                         {/* Icon with Glow */}
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-xl shadow-primary/30">
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/90 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-xl shadow-primary/30">
                           <service.icon className="w-10 h-10 text-white" />
                         </div>
 
@@ -569,11 +569,11 @@ const Services = () => {
               className="group relative"
             >
               {/* Blue accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-2 bg-blue-500 rounded-t-2xl" />
+              <div className="absolute top-0 left-0 right-0 h-2 bg-primary rounded-t-2xl" />
               
-              <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 border-2 border-blue-200 hover:border-blue-400 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col">
+              <div className="relative bg-gradient-to-br from-primary/5 via-white to-primary/8 border-2 border-primary/20 hover:border-primary/40 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col">
                 {/* Decorative gradient orb */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-indigo-500/20 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-primary/25 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity" />
                 
                 {/* Shine effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -582,17 +582,17 @@ const Services = () => {
 
                 <div className="p-6 pt-8 relative z-10 flex flex-col flex-grow">
                   <div className="mb-3">
-                    <h4 className="text-xl font-display font-black text-blue-700 mb-1">
+                    <h4 className="text-xl font-display font-black text-primary mb-1">
                       Premium Package
                     </h4>
-                    <p className="text-xs text-blue-600/70">
+                    <p className="text-xs text-primary/70">
                       Complete care for your vehicle
                     </p>
                   </div>
 
                   <div className="mb-4 text-center py-3">
                     <div className="relative inline-block">
-                      <span className="text-3xl md:text-4xl font-display font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                      <span className="text-3xl md:text-4xl font-display font-black bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   {selectedCarType === "sedan" && "LKR 11,500"}
                   {selectedCarType === "hatchback-small" && "LKR 10,000"}
                   {selectedCarType === "hatchback" && "LKR 10,600"}
@@ -605,7 +605,7 @@ const Services = () => {
                   {selectedCarType === "pickup" && "LKR 16,700"}
                   {selectedCarType === "mini-trucks" && "LKR 18,200"}
                       </span>
-                      <span className="block text-xs mt-1 text-blue-600/70 font-medium">
+                      <span className="block text-xs mt-1 text-primary/70 font-medium">
                         per service
                       </span>
                     </div>
@@ -620,8 +620,8 @@ const Services = () => {
                         transition={{ duration: 0.3, delay: 0.6 + (idx * 0.05) }}
                         className="flex items-start gap-2"
                       >
-                        <div className="w-5 h-5 rounded-full flex items-center justify-center bg-blue-100 flex-shrink-0 mt-0.5 shadow-sm">
-                          <CheckCircle2 className="w-3 h-3 text-blue-600 stroke-[3]" />
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center bg-primary/10 flex-shrink-0 mt-0.5 shadow-sm">
+                          <CheckCircle2 className="w-3 h-3 text-primary stroke-[3]" />
                         </div>
                         <span className="text-xs text-gray-700 leading-relaxed">{feature}</span>
                       </motion.li>
@@ -629,7 +629,7 @@ const Services = () => {
                   </ul>
 
                   <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20the%20Premium%20Package" target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full py-3 text-sm font-bold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                    <Button className="w-full py-3 text-sm font-bold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
                       WhatsApp Us
                     </Button>
                   </a>

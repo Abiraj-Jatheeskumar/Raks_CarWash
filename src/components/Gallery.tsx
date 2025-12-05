@@ -527,7 +527,7 @@ const Gallery = () => {
               className="relative text-center p-6 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-xl hover:shadow-2xl transition-all overflow-hidden"
             >
               {/* Decorative gradient orb */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-3xl -z-0" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/25 rounded-full blur-3xl -z-0" />
               
               <div className="text-4xl mb-3 relative z-10">{stat.icon}</div>
               <div className="text-3xl md:text-4xl font-display font-black bg-gradient-to-r from-primary to-raks-silver bg-clip-text text-transparent mb-2 relative z-10">

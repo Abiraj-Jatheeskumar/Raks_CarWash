@@ -285,7 +285,7 @@ const Hero = () => {
                   <motion.span
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.7, repeat: Infinity }}
-                    className="inline-block w-1 h-8 md:h-12 bg-gradient-to-b from-cyan-400 to-blue-400 ml-1 rounded-full shadow-lg shadow-cyan-400/50"
+                    className="inline-block w-1 h-8 md:h-12 bg-gradient-to-b from-raks-silver to-raks-metallic ml-1 rounded-full shadow-lg shadow-raks-silver/50"
                   />
                   
                   {/* Glow effect */}

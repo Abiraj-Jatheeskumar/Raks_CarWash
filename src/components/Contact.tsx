@@ -279,9 +279,9 @@ const Contact = () => {
                 className="group relative flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Decorative gradient orb */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-3xl -z-0" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-3xl -z-0" />
                 
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10 shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10 shadow-lg">
                   <info.icon className="w-7 h-7 text-primary transition-colors" />
                 </div>
                 <div className="flex-1 relative z-10">

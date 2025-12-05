@@ -87,9 +87,9 @@ const About = () => {
                   className="group p-4 rounded-xl bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
                 >
                   {/* Decorative gradient orb */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-blue-500/15 rounded-full blur-2xl -z-0" />
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/15 to-primary/20 rounded-full blur-2xl -z-0" />
                   
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all relative z-10">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-all relative z-10">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h4 className="font-display font-bold text-foreground text-sm relative z-10">{item.title}</h4>

@@ -339,7 +339,7 @@ const GarageServicesPage = () => {
 
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-raks-silver/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
       </section>
 
       {/* Emergency Services Banner */}
@@ -398,11 +398,11 @@ const GarageServicesPage = () => {
                 className="group relative bg-gradient-to-br from-card via-card to-primary/5 border-2 border-primary/30 hover:border-primary/50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Decorative gradient orb */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-3xl -z-0" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/25 rounded-full blur-3xl -z-0" />
                 
                 {/* Icon */}
                 <div className="flex items-start justify-between mb-4 relative z-10">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div className="text-right">
