@@ -311,8 +311,8 @@ const GarageServicesPage = () => {
             <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6">
               Complete Auto Repair & Maintenance
             </h1>
-            <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Expert mechanics, advanced diagnostics, and quality parts. We handle everything from routine maintenance to major repairs.
+            <p className="text-base text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto">
+              Our auto repair division offers reliable, transparent, and expert mechanical services for all types of vehicles. With modern diagnostic systems, skilled technicians, and a commitment to quality, we ensure your car runs smoothly and safely. From routine maintenance to engine repairs, brake service, suspension work, and electrical troubleshooting, every job is handled with precision and care. We focus on identifying the real issue, explaining it clearly to the customer, and providing long-lasting solutions — not quick fixes. At Raks, your vehicle's performance, reliability, and safety always come first.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">

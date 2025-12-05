@@ -127,10 +127,10 @@ const Hero = () => {
       {/* Slider Navigation Arrows */}
       <motion.button
         onClick={prevImage}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        whileHover={{ scale: 1.1, x: -5 }}
+        whileHover={{ scale: 1.1 }}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all group"
       >
         <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-raks-silver transition-colors" />
@@ -138,33 +138,14 @@ const Hero = () => {
 
       <motion.button
         onClick={nextImage}
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        whileHover={{ scale: 1.1, x: 5 }}
+        whileHover={{ scale: 1.1 }}
         className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all group"
       >
         <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-raks-silver transition-colors" />
       </motion.button>
-
-      {/* Slider Indicators */}
-      <div className="absolute bottom-[450px] sm:bottom-[480px] md:bottom-40 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {heroImages.map((_, index) => (
-          <motion.button
-            key={index}
-            onClick={() => {
-              setDirection(index > currentImageIndex ? 1 : -1);
-              setCurrentImageIndex(index);
-            }}
-            whileHover={{ scale: 1.2 }}
-            className={`h-2 rounded-full transition-all ${
-              index === currentImageIndex 
-                ? 'w-8 bg-raks-silver' 
-                : 'w-2 bg-white/40 hover:bg-white/60'
-            }`}
-          />
-        ))}
-      </div>
 
       {/* Animated Overlay Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -185,187 +166,261 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Premium Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, type: "spring" }}
-          >
-            <div className="inline-flex items-center gap-3 px-7 py-3.5 mb-10 text-sm font-bold bg-gradient-to-r from-yellow-400/20 via-amber-400/20 to-yellow-400/20 border-2 border-yellow-400/40 rounded-full backdrop-blur-xl shadow-2xl">
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-              </motion.div>
-              <span className="text-yellow-400 font-extrabold tracking-wide">
-                PREMIUM CAR CARE SERVICES
-              </span>
-              <Sparkles className="w-5 h-5 text-yellow-400" />
-            </div>
-          </motion.div>
-
-          {/* Main Heading with Typing Animation */}
+          {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            {/* Bold Brand Name with Vibrant Gradient */}
+            {/* Animated Slogan with Word-by-Word Reveal */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative mb-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative mb-10 py-8"
             >
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight">
-                <span 
-                  className="inline-block bg-gradient-to-r from-gray-100 via-raks-silver to-gray-100 bg-clip-text text-transparent relative drop-shadow-2xl"
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight tracking-wide">
+                {/* Animated words */}
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-white via-raks-silver to-gray-200 bg-clip-text text-transparent drop-shadow-2xl"
                   style={{ 
-                    fontFamily: "'Montserrat', 'Arial Black', sans-serif", 
-                    fontWeight: 900,
-                    letterSpacing: '0.02em',
-                    textShadow: "0 0 80px rgba(192, 192, 192, 0.8), 0 0 120px rgba(255, 255, 255, 0.5)"
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 400,
+                    letterSpacing: '0.03em',
                   }}
                 >
-                  RAKS
-                  {/* Glowing underline */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="absolute -bottom-3 left-0 h-2 bg-gradient-to-r from-raks-metallic via-raks-silver to-raks-metallic rounded-full shadow-lg shadow-raks-silver/50"
-                  />
-                </span>
+                  We
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-pink-200 via-rose-300 to-pink-200 bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 600,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  <motion.span
+                    animate={{ 
+                      textShadow: [
+                        "0 0 20px rgba(255, 182, 193, 0.5)",
+                        "0 0 40px rgba(255, 182, 193, 0.8)",
+                        "0 0 20px rgba(255, 182, 193, 0.5)",
+                      ]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    love
+                  </motion.span>
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 300,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  your
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.0, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-cyan-300 via-blue-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 700,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  <motion.span
+                    animate={{ 
+                      textShadow: [
+                        "0 0 30px rgba(103, 232, 249, 0.6)",
+                        "0 0 50px rgba(103, 232, 249, 0.9)",
+                        "0 0 30px rgba(103, 232, 249, 0.6)",
+                      ]
+                    }}
+                    transition={{ duration: 2.5, repeat: Infinity }}
+                  >
+                    car
+                  </motion.span>
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 300,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  the
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.4, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-amber-200 via-yellow-300 to-amber-200 bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 600,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  <motion.span
+                    animate={{ 
+                      textShadow: [
+                        "0 0 25px rgba(251, 191, 36, 0.5)",
+                        "0 0 45px rgba(251, 191, 36, 0.8)",
+                        "0 0 25px rgba(251, 191, 36, 0.5)",
+                      ]
+                    }}
+                    transition={{ duration: 2.2, repeat: Infinity }}
+                  >
+                    same
+                  </motion.span>
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.6, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-white via-gray-100 to-white bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 300,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  as
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.8, type: "spring", bounce: 0.4 }}
+                  className="inline-block mr-4 bg-gradient-to-br from-emerald-300 via-green-300 to-emerald-200 bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 600,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  <motion.span
+                    animate={{ 
+                      textShadow: [
+                        "0 0 25px rgba(52, 211, 153, 0.5)",
+                        "0 0 45px rgba(52, 211, 153, 0.8)",
+                        "0 0 25px rgba(52, 211, 153, 0.5)",
+                      ]
+                    }}
+                    transition={{ duration: 2.3, repeat: Infinity }}
+                  >
+                    you
+                  </motion.span>
+                </motion.span>
+                
+                <motion.span
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 2.0, type: "spring", bounce: 0.4 }}
+                  className="inline-block bg-gradient-to-br from-white via-raks-silver to-gray-200 bg-clip-text text-transparent drop-shadow-2xl"
+                  style={{ 
+                    fontFamily: "'Playfair Display', 'Georgia', serif", 
+                    fontWeight: 400,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  do
+                </motion.span>
               </h1>
               
-              {/* Vibrant glow */}
+              {/* Animated decorative underline */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1.2, delay: 2.2, ease: "easeInOut" }}
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-transparent via-raks-silver to-transparent origin-center"
+              >
+                <motion.div
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="h-full w-1/3 bg-gradient-to-r from-transparent via-white to-transparent"
+                />
+              </motion.div>
+              
+              {/* Floating particles */}
               <motion.div
                 animate={{
-                  opacity: [0.4, 0.7, 0.4],
+                  y: [-10, 10, -10],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-0 left-1/4 w-2 h-2 bg-pink-300 rounded-full blur-sm"
+              />
+              <motion.div
+                animate={{
+                  y: [10, -10, 10],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute top-1/4 right-1/4 w-3 h-3 bg-cyan-300 rounded-full blur-sm"
+              />
+              <motion.div
+                animate={{
+                  y: [-15, 15, -15],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-amber-300 rounded-full blur-sm"
+              />
+              
+              {/* Radial glow */}
+              <motion.div
+                animate={{
+                  opacity: [0.1, 0.3, 0.1],
                   scale: [1, 1.05, 1],
                 }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute inset-0 bg-gradient-to-r from-raks-silver/30 via-white/40 to-raks-silver/30 blur-3xl -z-10"
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute inset-0 bg-radial-gradient from-white/10 via-transparent to-transparent blur-3xl -z-10"
               />
             </motion.div>
 
-            {/* Typing Animation with Bright Colors */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mb-8"
-            >
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                <span 
-                  className="text-white drop-shadow-lg"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
-                >
-                  Where{" "}
-                </span>
-                
-                <span className="relative inline-block">
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
-                    className="bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent font-black drop-shadow-xl"
-                    style={{ 
-                      fontFamily: "'Poppins', sans-serif", 
-                      fontWeight: 900,
-                      textShadow: "0 0 60px rgba(103, 232, 249, 0.8)"
-                    }}
-                  >
-                    {displayedText}
-                  </motion.span>
-                  
-                  {/* Bright cursor */}
-                  <motion.span
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.7, repeat: Infinity }}
-                    className="inline-block w-1 h-8 md:h-12 bg-gradient-to-b from-raks-silver to-raks-metallic ml-1 rounded-full shadow-lg shadow-raks-silver/50"
-                  />
-                  
-                  {/* Glow effect */}
-                  <motion.div
-                    animate={{
-                      opacity: [0.5, 1, 0.5],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute inset-0 bg-cyan-400/30 blur-2xl -z-10"
-                  />
-                </span>
-
-                <span 
-                  className="block mt-2 text-white drop-shadow-lg"
-                  style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
-                >
-                  Meets Excellence
-                </span>
-              </div>
-            </motion.div>
-
-            {/* Bold Subtitle */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto font-semibold tracking-wide drop-shadow-lg mb-10"
+              className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto font-light tracking-wider drop-shadow-lg mb-10"
               style={{ 
-                fontFamily: "'Poppins', sans-serif", 
-                letterSpacing: '0.03em',
+                fontFamily: "'Raleway', 'Helvetica Neue', sans-serif", 
+                fontWeight: 300,
+                letterSpacing: '0.08em',
                 textShadow: "0 2px 10px rgba(0, 0, 0, 0.5)"
               }}
             >
               Premium Car Wash · Expert Detailing · Professional Care
             </motion.p>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
-          >
-            <a href="https://wa.me/94770710000?text=Hi%2C%20I%20would%20like%20to%20book%20a%20service" target="_blank" rel="noopener noreferrer">
-              <motion.div
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-raks-silver via-white to-raks-metallic text-primary font-black text-lg px-10 py-7 hover:shadow-2xl transition-all duration-300 shadow-xl group relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    Book Now
-                    <motion.span
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.span>
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white to-raks-silver opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Button>
-              </motion.div>
-            </a>
-            
-            <motion.div
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button
-                onClick={() => scrollToSection("#services")}
-                size="lg"
-                variant="outline"
-                className="bg-white/10 border-2 border-white/50 text-white font-bold text-lg px-10 py-7 hover:bg-white/20 hover:border-white backdrop-blur-xl transition-all duration-300 shadow-xl"
-              >
-                Explore Services
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
 
@@ -388,20 +443,20 @@ const Hero = () => {
                 <feature.icon className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-white text-lg">{feature.title}</h3>
-                <p className="text-sm text-white/80">{feature.description}</p>
+                <h3 className="font-light text-white text-lg tracking-wide" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300 }}>{feature.title}</h3>
+                <p className="text-sm text-white/70 font-light tracking-wide" style={{ fontFamily: "'Raleway', sans-serif", fontWeight: 300 }}>{feature.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

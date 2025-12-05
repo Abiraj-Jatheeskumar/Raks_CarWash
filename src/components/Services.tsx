@@ -296,32 +296,65 @@ const Services = () => {
             Complete Car Care
             <span className="text-primary block">Solutions</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Select your vehicle type to see pricing and services tailored for your car.
+          <p className="text-muted-foreground text-base leading-relaxed max-w-4xl mx-auto mb-12">
+            At Raks Car Wash, we deliver a complete, professional cleaning experience that protects your vehicle inside and out. Using premium products, advanced equipment, and careful techniques, our team ensures every wash is safe, detailed, and truly high-quality. From exterior cleaning and underbody washing to interior vacuuming and polishing, we remove dirt and stains without harming your car. Whether it's a quick wash or full detailing, your vehicle leaves Raks looking cleaner, brighter, and showroom-ready.
           </p>
+        </motion.div>
+
+        {/* Vehicle Type Selection Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12 bg-gradient-to-br from-white via-gray-50 to-primary/5 border-2 border-primary/20 rounded-3xl p-8 shadow-xl"
+        >
+          <div className="text-center mb-6">
+            <p className="text-primary font-semibold text-lg leading-relaxed">
+              Select your vehicle type to see pricing and services tailored for your car.
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            {/* First Row - 6 types */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {carTypes.slice(0, 6).map((carType) => (
+                <button
+                  key={carType.id}
+                  onClick={() => setSelectedCarType(carType.id)}
+                  className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-xl transition-all ${
+                    selectedCarType === carType.id
+                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                      : 'bg-white hover:bg-primary/10 hover:scale-105'
+                  }`}
+                >
+                  <carType.icon className="w-4 h-4" />
+                  {carType.name}
+                </button>
+              ))}
+            </div>
+            
+            {/* Second Row - 5 types */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {carTypes.slice(6).map((carType) => (
+                <button
+                  key={carType.id}
+                  onClick={() => setSelectedCarType(carType.id)}
+                  className={`flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-xl transition-all ${
+                    selectedCarType === carType.id
+                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                      : 'bg-white hover:bg-primary/10 hover:scale-105'
+                  }`}
+                >
+                  <carType.icon className="w-4 h-4" />
+                  {carType.name}
+                </button>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* Car Type Selection Tabs */}
         <Tabs value={selectedCarType} onValueChange={setSelectedCarType} className="w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12"
-          >
-            <TabsList className="w-full h-auto flex-wrap justify-center gap-2 bg-card/50 p-2 rounded-2xl border border-border">
-              {carTypes.map((carType) => (
-                <TabsTrigger
-                  key={carType.id}
-                  value={carType.id}
-                  className="flex items-center gap-2 px-4 py-3 text-sm font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-xl transition-all"
-                >
-                  <carType.icon className="w-4 h-4" />
-                  {carType.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </motion.div>
 
           {/* Services Grid for Each Car Type */}
           {carTypes.map((carType) => (

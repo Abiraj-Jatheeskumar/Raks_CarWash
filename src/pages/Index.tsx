@@ -38,19 +38,18 @@ const quickLinks = [
     color: "from-purple-500/20 to-purple-600/20"
   },
   {
-    title: "Auto Repair & Garage",
+    title: "Bodywork & Paint",
+    description: "Professional body repairs, dent removal & paint services",
+    icon: Sparkles,
+    href: "/bodywork-paint",
+    color: "from-blue-500/20 to-blue-600/20"
+  },
+  {
+    title: "Auto Repair",
     description: "Complete mechanical repairs & maintenance solutions",
     icon: Wrench,
     href: "/garage-services",
     color: "from-orange-500/20 to-orange-600/20"
-  },
-
-  {
-    title: "Gallery",
-    description: "See our work and transformations",
-    icon: Image,
-    href: "/gallery",
-    color: "from-pink-500/20 to-pink-600/20"
   }
 ];
 
@@ -125,13 +124,13 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center max-w-3xl mx-auto mb-16"
+              className="text-center max-w-4xl mx-auto mb-16"
             >
-              <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mb-4">
+              <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mb-6">
                 Explore Our Services
               </h2>
-              <p className="text-lg text-muted-foreground">
-                From premium car detailing to complete garage services, we offer comprehensive automotive care solutions
+              <p className="text-base text-muted-foreground leading-relaxed">
+                At Raks, we provide a complete automotive care experience under one trusted roof — from premium car washing and deep detailing to expert mechanical repairs and professional bodywork & paint restoration. Every vehicle that enters our premises is handled with precision, passion, and complete attention to detail. Our trained technicians use advanced tools, high-quality materials, and industry-standard processes to ensure your car looks great, performs flawlessly, and stays protected for the long run. Whether you need a fresh shine, a mechanical check-up, or full accident repair, Raks delivers reliable service, transparent communication, and craftsmanship you can trust. We are committed to giving every customer convenience, quality, and peace of mind — all in one place.
               </p>
             </motion.div>
 

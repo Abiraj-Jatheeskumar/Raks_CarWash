@@ -8,7 +8,8 @@ import Logo from "@/assets/Logo.png";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Car Wash & Detailing", href: "/services" },
-  { name: "Auto Repair & Garage", href: "/garage-services" },
+  { name: "Auto Repair", href: "/garage-services" },
+  { name: "Bodywork & Paint", href: "/bodywork-paint" },
   { name: "Gallery", href: "/gallery" },
 ];
 
@@ -49,7 +50,7 @@ const Header = () => {
               <img 
                 src={Logo} 
                 alt="RAKS Premium Car Detailing" 
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain"
               />
             </motion.div>
           </Link>
@@ -89,7 +90,7 @@ const Header = () => {
               <Button
                 className="bg-raks-silver text-primary font-semibold hover:bg-raks-silver-light transition-all hover:shadow-glow"
               >
-                WhatsApp Us
+                Book Now
               </Button>
             </a>
           </div>

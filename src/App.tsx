@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import GarageServicesPage from "./pages/GarageServicesPage";
+import BodyworkPaintPage from "./pages/BodyworkPaintPage";
 import GalleryPage from "./pages/GalleryPage";
 import ServiceDetail from "./pages/ServiceDetail";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/garage-services" element={<GarageServicesPage />} />
+          <Route path="/bodywork-paint" element={<BodyworkPaintPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/service/:serviceId" element={<ServiceDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
