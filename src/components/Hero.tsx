@@ -148,7 +148,7 @@ const Hero = () => {
       </motion.button>
 
       {/* Slider Indicators */}
-      <div className="absolute bottom-[380px] sm:bottom-[400px] md:bottom-40 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-[450px] sm:bottom-[480px] md:bottom-40 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {heroImages.map((_, index) => (
           <motion.button
             key={index}
@@ -374,7 +374,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          className="mt-20 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {features.map((feature, index) => (
             <motion.div

@@ -80,9 +80,9 @@ export default {
         "2xl": "calc(var(--radius) + 8px)",
       },
       boxShadow: {
-        card: "0 10px 40px -10px hsl(232 52% 12% / 0.15)",
-        elevated: "0 20px 60px -15px hsl(232 52% 12% / 0.25)",
-        glow: "0 0 30px hsl(232 52% 12% / 0.3)",
+        card: "0 10px 40px -10px hsl(200 94% 6% / 0.15)",
+        elevated: "0 20px 60px -15px hsl(200 94% 6% / 0.25)",
+        glow: "0 0 30px hsl(200 94% 6% / 0.3)",
         soft: "0 4px 20px hsl(220 20% 10% / 0.08)",
       },
       keyframes: {
