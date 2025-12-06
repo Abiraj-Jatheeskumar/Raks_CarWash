@@ -53,7 +53,7 @@ const Footer = () => {
               <img 
                 src={Logo} 
                 alt="RAKS Premium Car Detailing" 
-                className="h-12 w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
             </div>
             <p className="text-primary-foreground/70 mb-6 leading-relaxed">

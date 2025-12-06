@@ -285,7 +285,7 @@ const GarageServicesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-[#0f1729]">
+      <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-[#0f1729]">
         {/* Simple Pattern Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -306,11 +306,11 @@ const GarageServicesPage = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
-              className="text-center mb-8"
+              className="text-center mb-6 md:mb-8"
             >
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-raks-silver to-white px-8 py-3 rounded-full shadow-2xl">
-                <Wrench className="w-6 h-6 text-primary" />
-                <span className="font-bold text-primary tracking-wider">AUTOMOTIVE REPAIR SPECIALISTS</span>
+              <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-raks-silver to-white px-4 md:px-8 py-2 md:py-3 rounded-full shadow-2xl">
+                <Wrench className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <span className="font-bold text-primary tracking-wider text-xs md:text-base">AUTOMOTIVE REPAIR SPECIALISTS</span>
               </div>
             </motion.div>
             
@@ -319,7 +319,7 @@ const GarageServicesPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-7xl font-display font-black mb-8 leading-tight text-center"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 md:mb-8 leading-tight text-center px-4"
             >
               <span className="text-white">Complete Auto Repair & Maintenance</span>
             </motion.h1>
@@ -329,7 +329,7 @@ const GarageServicesPage = () => {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="h-1 w-32 bg-gradient-to-r from-transparent via-raks-silver to-transparent rounded-full mx-auto mb-10"
+              className="h-1 w-24 md:w-32 bg-gradient-to-r from-transparent via-raks-silver to-transparent rounded-full mx-auto mb-6 md:mb-10"
             />
             
             {/* Description - Full Width */}
@@ -337,9 +337,9 @@ const GarageServicesPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
-              <p className="text-base md:text-lg text-white/90 leading-relaxed text-center max-w-6xl mx-auto">
+              <p className="text-sm md:text-base lg:text-lg text-white/90 leading-relaxed text-center max-w-6xl mx-auto px-4">
                 Our auto repair division offers reliable, transparent, and expert mechanical services for all types of vehicles. With modern diagnostic systems, skilled technicians, and a commitment to quality, we ensure your car runs smoothly and safely. From routine maintenance to engine repairs, brake service, suspension work, and electrical troubleshooting, every job is handled with precision and care. We focus on identifying the real issue, explaining it clearly to the customer, and providing long-lasting solutions — not quick fixes. At Raks, your vehicle's performance, reliability, and safety always come first.
               </p>
             </motion.div>
@@ -349,12 +349,12 @@ const GarageServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="flex flex-wrap gap-4 justify-center"
+              className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 justify-center px-4"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-raks-silver to-white text-primary font-bold hover:shadow-2xl hover:shadow-raks-silver/50 transition-all"
+                  className="bg-gradient-to-r from-raks-silver to-white text-primary font-bold hover:shadow-2xl hover:shadow-raks-silver/50 transition-all w-[200px] h-[48px]"
                   onClick={() => document.querySelector('#services-grid')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Services
@@ -366,9 +366,9 @@ const GarageServicesPage = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button 
                     size="lg"
-                    className="bg-white/10 backdrop-blur-md text-white font-bold hover:bg-white/20 border-2 border-white/30 hover:border-white shadow-lg"
+                    className="bg-white/10 backdrop-blur-md text-white font-bold hover:bg-white/20 border-2 border-white/30 hover:border-white shadow-lg w-[200px] h-[48px]"
                   >
-                    WhatsApp Us
+                    Book Now
                     <Phone className="w-5 h-5 ml-2" />
                   </Button>
                 </motion.div>

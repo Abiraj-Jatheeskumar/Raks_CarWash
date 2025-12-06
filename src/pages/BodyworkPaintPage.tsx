@@ -208,7 +208,7 @@ const BodyworkPaintPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 overflow-hidden">
+      <section className="relative pt-20 md:pt-24 pb-12 md:pb-16 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
@@ -232,12 +232,12 @@ const BodyworkPaintPage = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
-              className="inline-block mb-8"
+              className="inline-block mb-6 md:mb-8"
             >
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-raks-silver via-white to-raks-silver px-8 py-3 rounded-full shadow-2xl">
-                <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-                <span className="font-bold text-primary tracking-wider">BODYWORK & PAINT SPECIALISTS</span>
-                <Paintbrush className="w-6 h-6 text-primary" />
+              <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-raks-silver via-white to-raks-silver px-4 md:px-8 py-2 md:py-3 rounded-full shadow-2xl">
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-primary animate-pulse" />
+                <span className="font-bold text-primary tracking-wider text-xs md:text-base">BODYWORK & PAINT SPECIALISTS</span>
+                <Paintbrush className="w-5 h-5 md:w-6 md:h-6 text-primary" />
               </div>
             </motion.div>
 
@@ -246,7 +246,7 @@ const BodyworkPaintPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black mb-4 md:mb-6 leading-tight px-4"
             >
               <span className="text-white">Expert Body Repairs &</span>
               <br />
@@ -260,7 +260,7 @@ const BodyworkPaintPage = () => {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="h-1 w-32 bg-gradient-to-r from-transparent via-raks-silver to-transparent rounded-full mx-auto mb-6"
+              className="h-1 w-24 md:w-32 bg-gradient-to-r from-transparent via-raks-silver to-transparent rounded-full mx-auto mb-4 md:mb-6"
             />
 
             {/* Description */}
@@ -268,9 +268,9 @@ const BodyworkPaintPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-base md:text-lg text-white/90 leading-relaxed max-w-5xl mx-auto mb-8"
+              className="text-sm md:text-base lg:text-lg text-white/90 leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8 px-4"
             >
-              Our body shop and paint facility is dedicated to restoring your vehicle to its original factory standard — from minor scratches and dents to complete accident repairs. With advanced panel-repair techniques, high-quality paint booths, and precision computerized colour matching, we deliver a flawless, seamless finish every time. Each repair is performed by skilled technicians who meticulously reshape, refinish, and repaint your vehicle with expert craftsmanship. Whether it's a small correction or a full body restoration, we revive the shine, smoothness, and structural integrity of your car. At Raks, we don't just repair damage — we professionally restore confidence in your vehicle.
+              Expert bodywork and paint restoration from minor scratches to complete accident repairs. Using advanced techniques, precision color matching, and skilled craftsmanship, we deliver flawless factory-standard finishes that restore your vehicle's shine and structural integrity.
             </motion.p>
           </motion.div>
 

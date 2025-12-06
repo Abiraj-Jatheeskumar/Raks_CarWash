@@ -136,29 +136,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-primary/70" />
       </div>
 
-      {/* Slider Navigation Arrows */}
-      <motion.button
-        onClick={prevImage}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        whileHover={{ scale: 1.1 }}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all group"
-      >
-        <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-raks-silver transition-colors" />
-      </motion.button>
-
-      <motion.button
-        onClick={nextImage}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        whileHover={{ scale: 1.1 }}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all group"
-      >
-        <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-white group-hover:text-raks-silver transition-colors" />
-      </motion.button>
-
       {/* Animated Overlay Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -176,28 +153,31 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
+            className="mb-6 md:mb-8"
           >
             {/* Animated Slogan */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="relative mb-16 py-10"
+              className="relative mb-8 md:mb-16 py-6 md:py-10"
             >
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-light leading-relaxed tracking-wider text-white drop-shadow-2xl"
-                style={{ letterSpacing: '0.05em' }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold leading-tight md:leading-relaxed tracking-wide text-white px-2"
+                style={{ 
+                  letterSpacing: '0.02em',
+                  textShadow: '0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.6)'
+                }}
               >
                 We love your car the same as you do
               </motion.h1>
@@ -260,12 +240,12 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto font-light tracking-wider drop-shadow-lg mb-10"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto font-light tracking-wider mb-8 md:mb-10 px-4"
               style={{ 
                 fontFamily: "'Raleway', 'Helvetica Neue', sans-serif", 
                 fontWeight: 300,
                 letterSpacing: '0.08em',
-                textShadow: "0 2px 10px rgba(0, 0, 0, 0.5)"
+                textShadow: "0 2px 15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.1)"
               }}
             >
               Premium Car Wash · Expert Detailing · Professional Care
@@ -278,7 +258,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          className="mt-12 md:mt-20 mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto"
         >
           {features.map((feature, index) => (
             <motion.div

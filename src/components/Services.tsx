@@ -379,24 +379,24 @@ const Services = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-raks-silver/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
           
-          <div className="relative bg-white/80 backdrop-blur-sm border-2 border-primary/30 rounded-3xl p-8 md:p-10 shadow-2xl">
+          <div className="relative bg-white/80 backdrop-blur-sm border-2 border-primary/30 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-2xl">
             {/* Header Section */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center mb-8"
+              className="text-center mb-6 md:mb-8"
             >
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-raks-silver px-6 py-2.5 rounded-full mb-4 shadow-lg">
-                <Car className="w-5 h-5 text-white" />
-                <span className="text-sm font-bold text-white tracking-wide">CHOOSE YOUR VEHICLE</span>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-raks-silver px-4 sm:px-6 py-2 sm:py-2.5 rounded-full mb-3 md:mb-4 shadow-lg">
+                <Car className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <span className="text-xs sm:text-sm font-bold text-white tracking-wide">CHOOSE YOUR VEHICLE</span>
               </div>
               
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 md:mb-3 px-2">
                 Select Your Vehicle Type
               </h3>
               
-              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">
                 Choose your vehicle to view customized pricing and services designed specifically for your car
               </p>
               
@@ -409,9 +409,9 @@ const Services = () => {
               />
             </motion.div>
             
-            <div className="space-y-5">
+            <div className="space-y-3 md:space-y-5">
               {/* First Row - 6 types */}
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
                 {carTypes.slice(0, 6).map((carType, index) => (
                   <motion.button
                     key={carType.id}
@@ -421,7 +421,7 @@ const Services = () => {
                     onClick={() => setSelectedCarType(carType.id)}
                     whileHover={{ scale: 1.08, y: -4 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`relative group flex items-center gap-3 px-7 py-4 text-base font-bold rounded-xl transition-all duration-300 ${
+                    className={`relative group flex items-center gap-2 sm:gap-3 px-3 sm:px-5 md:px-7 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all duration-300 ${
                       selectedCarType === carType.id
                         ? 'bg-gradient-to-r from-primary to-primary/90 text-white shadow-xl shadow-primary/30'
                         : 'bg-white hover:bg-gradient-to-r hover:from-raks-silver/10 hover:to-primary/10 text-foreground shadow-md hover:shadow-lg border-2 border-primary/20 hover:border-primary/40'
@@ -449,7 +449,7 @@ const Services = () => {
               </div>
               
               {/* Second Row - 5 types */}
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
                 {carTypes.slice(6).map((carType, index) => (
                   <motion.button
                     key={carType.id}
@@ -459,7 +459,7 @@ const Services = () => {
                     onClick={() => setSelectedCarType(carType.id)}
                     whileHover={{ scale: 1.08, y: -4 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`relative group flex items-center gap-3 px-7 py-4 text-base font-bold rounded-xl transition-all duration-300 ${
+                    className={`relative group flex items-center gap-2 sm:gap-3 px-3 sm:px-5 md:px-7 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base font-bold rounded-lg md:rounded-xl transition-all duration-300 ${
                       selectedCarType === carType.id
                         ? 'bg-gradient-to-r from-primary to-primary/90 text-white shadow-xl shadow-primary/30'
                         : 'bg-white hover:bg-gradient-to-r hover:from-raks-silver/10 hover:to-primary/10 text-foreground shadow-md hover:shadow-lg border-2 border-primary/20 hover:border-primary/40'
@@ -468,12 +468,12 @@ const Services = () => {
                     {selectedCarType === carType.id && (
                       <motion.div
                         layoutId="activeVehicle"
-                        className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-xl"
+                        className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-lg md:rounded-xl"
                         transition={{ type: "spring", duration: 0.6 }}
                       />
                     )}
-                    <carType.icon className={`w-5 h-5 relative z-10 ${selectedCarType === carType.id ? 'text-white' : 'text-primary'}`} />
-                    <span className="relative z-10">{carType.name}</span>
+                    <carType.icon className={`w-4 h-4 sm:w-5 sm:h-5 relative z-10 ${selectedCarType === carType.id ? 'text-white' : 'text-primary'}`} />
+                    <span className="relative z-10 whitespace-nowrap">{carType.name}</span>
                     
                     {selectedCarType === carType.id && (
                       <motion.div
